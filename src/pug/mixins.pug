@@ -1,0 +1,6 @@
+include mixins/svg
+mixin skills(options)
+    label.skills__label&attributes(attributes)
+        input.skills__input(type="checkbox" name=options.name checked=options.checked)
+        span.skills__checkmark
+        span.skills__name= options.skill

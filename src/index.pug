@@ -1,0 +1,110 @@
+extends pug/base
+
+prepend vars
+	- title = 'Тестовое задание Откина М.А.'
+	- description = 'Описание'
+
+append vars
+	- title = 'Тестовое задание Откина М.А.'
+	- meta.applicationName = 'Тестовое задание Откина М.А.'
+	- meta.keywords = 'Ключевые слова'
+	- meta.viewport = 'width=device-width, initial-scale=1'
+	- link.icon = 'favicon.ico'
+
+block content
+	main.wrap
+		.container
+			.data
+				.data__avatar
+					img.data__img(src="images/sprites/png/Ava.jpg" alt="text")
+					img.data__me(src="images/sprites/png/Me2.jpg" alt="text")
+
+				form.data__form(action="#" method="post")
+					// Можно было бы типы расписать еще, как date, tel/email
+					input.data__input(type="text" name="name" placeholder="Имя" value="Откин Максим Александрович" required autocomplete="off")
+					input.data__input(type="text" name="date" placeholder="Дата рождения" value="30.03.1989")
+					input.data__input(type="text" name="city" placeholder="Город" value="Саранск" required autocomplete="off")
+					input.data__input(
+						type="text"
+						name="contacts"
+						placeholder="Контактные данные"
+						value="+7(952)073-06-30, @Scrolinger"
+						required autocomplete="off"
+					)
+
+				img.data__approved(src="images/sprites/png/Approved.png" alt="text")
+		
+			.skills
+				// По-идее, тут должен быть заголовок h1
+				.skills__title
+					| Навыки
+
+				form.skills__form(action="#" method="post")
+					+skills({
+						skill: 'html5',
+						name: 'html5',
+						checked: 'checked'
+					})
+					+skills({
+						skill: 'css3',
+						name: 'css3',
+						checked: 'checked'
+					})
+					+skills({
+						skill: 'бэм',
+						name: 'bem',
+						checked: 'checked'
+					})
+					+skills({
+						skill: 'sass',
+						name: 'sass',
+						checked: 'checked'
+					})
+					+skills({
+						skill: 'less',
+						name: 'less'
+					})
+					+skills({
+						skill: 'gulp',
+						name: 'gulp',
+						checked: 'checked'
+					})
+					+skills({
+						skill: 'vanillajs',
+						name: 'vanillajs'
+					})
+					+skills({
+						skill: 'angular',
+						name: 'angular'
+					})
+					+skills({
+						skill: 'jquery',
+						name: 'jquery',
+						checked: 'checked'
+					})
+					+skills({
+						skill: 'git',
+						name: 'git',
+						checked: 'checked'
+					})
+					+skills({
+						skill: 'foundation',
+						name: 'foundation'
+					})
+					+skills({
+						skill: 'bootstrap',
+						name: 'bootstrap',
+						checked: 'checked'
+					})
+
+			.level
+				.level__chart
+					img.level__graph(src="images/sprites/png/Chart.png" alt="text")
+					img.level__arrow(src="images/sprites/png/Arrow.png" alt="text")
+				.level__adder
+					p.level__text
+						| Мой уровень владения 
+						br
+						| Java Script
+					span.level__percent
+						| 0
